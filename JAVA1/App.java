@@ -1,3 +1,4 @@
+package JAVA1;
 import java.io.PrintStream; // Importanto a classe  - classe de saída do java (retonará valor)  
 import java.util.Scanner;
 

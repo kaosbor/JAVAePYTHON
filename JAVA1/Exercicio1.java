@@ -1,3 +1,4 @@
+package JAVA1;
 import java.io.PrintStream; // Para aparecer na tela do print
 import java.util.Scanner; // Para receber dados
 import java.util.Random; // Para gerar numerais aleatórios
