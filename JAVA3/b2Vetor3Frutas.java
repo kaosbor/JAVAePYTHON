@@ -1,9 +1,8 @@
+/* Exercício 2 em JAVA: Crie um programa que declare um vetor com 3 nomes de frutas. Peça ao usuário para digitar um número de 0 a 2 e mostre o nome da fruta correspondente. Dica: Os vetores em Java são indexados a partir de 0. Use o número digitado pelo usuário como índice do vetor para acessar o nome da fruta. */
 package JAVA3;
 
-import java.io.PrintStream;
 import java.util.Scanner;
-
-public class bVetor3Frutas {
+public class b2Vetor3Frutas {
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -27,8 +26,3 @@ public class bVetor3Frutas {
         scanner.close();
     }
 }
-
-/* Exercício 2 em JAVA:
-Crie um programa que declare um vetor com 3 nomes de frutas. Peça ao usuário para digitar um número de 0 a 2 e mostre o nome da fruta correspondente.
-Dica: Os vetores em Java são indexados a partir de 0. Use o número digitado pelo usuário como índice do vetor para acessar o nome da fruta.
-*/

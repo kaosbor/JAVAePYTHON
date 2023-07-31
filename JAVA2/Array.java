@@ -21,7 +21,7 @@ public class Array {
     }
 
 
-   int[] infiniteNumbers = new int[100];
-   int infiniteIndex
+   //int[] infiniteNumbers = new int[100];
+   //int infiniteIndex
 
 }

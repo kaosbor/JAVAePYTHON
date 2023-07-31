@@ -1,15 +1,16 @@
+/* Exercício 1 em JAVA: Crie um programa que declare um vetor com 5 números inteiros. Em seguida, some todos os elementos do vetor e exiba o resultado. Dica: Use um loop "for" para percorrer o vetor e vá acumulando a soma dos elementos em uma variável. */
 package JAVA3;
 
 import java.io.PrintStream;
 
-public class aSomaElementosVetor {
+public class a1SomaElementosVetor {
 
     public static void main(String[] args) {
 
     PrintStream out = System.out;
     out.println("\033[h\033[2J"); // LIMPA A TELA
 
-        int[] vetor = {20,20,20,20,20,50,50};       // Declaração do vetor com 5 números inteiros
+        int[] vetor = {20,20,20,20,20,50,150,100};       // Declaração do vetor com 5 números inteiros
 
         int soma = 0;                               // Variável para armazenar a soma dos elementos do vetor
         
@@ -21,9 +22,3 @@ public class aSomaElementosVetor {
 
     }
 }
-
-/*
-Exercício 1 em JAVA: 
-Crie um programa que declare um vetor com 5 números inteiros. Em seguida, some todos os elementos do vetor e exiba o resultado.
-Dica: Use um loop "for" para percorrer o vetor e vá acumulando a soma dos elementos em uma variável.
-*/
