@@ -7,7 +7,7 @@ package JAVA3;
 
 import java.io.PrintStream;
 
-public class e5VetorNrPar {
+public class Exercicio5 {
 
     public static void main(String[] args) {
 

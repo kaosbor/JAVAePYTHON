@@ -5,7 +5,7 @@ package JAVA3;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class c3MaiorValorVetor {
+public class Exercicio3 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

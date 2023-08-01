@@ -1,11 +1,11 @@
-
+/* Exercício 6: Crie um programa que declare um vetor com 4 palavras digitadas pelo usuário. Em seguida, exiba as palavras na ordem em que foram digitadas. Dica: Use um loop "for" para percorrer o vetor e exibir cada palavra com o comando "System.out.println()". */
 
 package JAVA3;
 
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class f6OrdemPalavras {
+public class Exercicio6 {
     
         public static void main(String[] args) {
         
@@ -21,15 +21,13 @@ public class f6OrdemPalavras {
             vetorPalavras[i] = scanner.next();
         }
 
-        out.println("Palavras digitadas ma ordem:");
+        out.println("\n1. Palavras digitadas ma ordem:");
 
         for (int i = 0; i < vetorPalavras.length; i++) {
             out.println("A ordem da palavra '" + vetorPalavras[i] + "' digitada é " + (i + 1) + "." );
         }           
 
-out.println("\n");
-
-        System.out.println("Palavras digitadas na ordem:");
+        System.out.println("\n2. Palavras digitadas na ordem:");
         for (int i = 0; i < vetorPalavras.length; i++) {
             System.out.println(vetorPalavras[i]);
         }

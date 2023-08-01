@@ -1,4 +1,4 @@
-package JAVA;
+package JAVA1;
 
 public class Retangulo {
     private int width;

@@ -175,7 +175,7 @@ public class Exercicio1 {
     // Exercíco Médio 7 - Variáveis - MAIOR NUMERO):
 
     public static void ExibirMaiorNumero(int MaiorNumero) { // Exercício 7 (Nível Médio - Variáveis - MAIOR NÚMERO):
-        PrintStream out = System.out;
+        // PrintStream out = System.out;
 
 
 

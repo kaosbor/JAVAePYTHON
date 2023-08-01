@@ -2,7 +2,7 @@
 package JAVA3;
 
 import java.util.Scanner;
-public class b2Vetor3Frutas {
+public class Exercicio2 {
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

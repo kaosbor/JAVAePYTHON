@@ -48,4 +48,3 @@ Crie um programa em Java que verifique se um ano é bissexto ou não.
 Dica: Leia um ano utilizando a classe Scanner ou a função `JOptionPane.showInputDialog()`. Utilize uma estrutura condicional `if` para verificar se o ano é bissexto. Verifique se o ano é divisível por 4 e não é divisível por 100, ou se é divisível por 400. Utilize o comando `System.out.println()` para exibir o resultado.
 
 pegar a string do numero e transforma em flota (parsefloat) ou inteiro (parseint)
-

@@ -4,7 +4,7 @@ package JAVA3;
 
 import java.io.PrintStream;
 
-public class d4NotasAlunos {
+public class Exercicio4 {
     
     public static void main(String[] args){
 
