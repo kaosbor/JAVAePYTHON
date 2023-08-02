@@ -22,7 +22,6 @@ public class Exercicio6 {
         }
 
         out.println("\n1. Palavras digitadas ma ordem:");
-
         for (int i = 0; i < vetorPalavras.length; i++) {
             out.println("A ordem da palavra '" + vetorPalavras[i] + "' digitada é " + (i + 1) + "." );
         }           
