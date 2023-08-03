@@ -1,6 +1,4 @@
 /* 
-Exercício 12: Oppenheimer está estudando as temperaturas de diferentes cidades. Crie um programa que permita a Oppenheimer registrar as temperaturas médias diárias de uma cidade durante uma semana (7 dias). Ao final, exiba a temperatura média da semana. Dica: Utilize um vetor para armazenar as temperaturas e calcule a média no final usando um loop "for".
-
 Exercício 13: A Barbie está brincando com seus amigos e criou um jogo em que eles devem adivinhar um número secreto entre 1 e 100. Crie um programa que gere um número aleatório entre 1 e 100 e permita que os amigos da Barbie tentem adivinhar o número até acertarem. Informe quantas tentativas foram necessárias. Dica: Use a classe `java.util.Random` para gerar um número aleatório e um loop para permitir várias tentativas.
 
 Exercício 14: Oppenheimer está trabalhando em um projeto e precisa armazenar as horas gastas em cada tarefa. Crie um programa que permita a Oppenheimer inserir as horas gastas em até 5 tarefas diferentes. Em seguida, exiba o total de horas trabalhadas. Dica: Use um vetor para armazenar as horas de cada tarefa e um loop para solicitar os dados ao Oppenheimer.
@@ -27,58 +25,122 @@ import java.util.Scanner;
 public class Exercicios11a20 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
         PrintStream out = System.out;
         out.print("\033[h\033[2J");
 
-        Exercicios11a20.Exercicio11(scanner);  // Funções
+        // Exercicios11a20.Exercicio11(scanner); // Funções
+        Exercicios11a20.Exercicio12(scanner); // Funções
 
         scanner.close();
-    }   
+    }
 
-/* Exercício 11:
-A Barbie está organizando uma lista de compras para uma festa que ela vai realizar. Crie um programa que permita à Barbie adicionar até 5 itens diferentes à lista de compras. Em seguida, exiba a lista completa para ela conferir. Dica: Use um vetor para armazenar os itens da lista de compras e um loop para solicitar os itens à Barbie.*/
+    /*
+     * Exercício 11:
+     * A Barbie está organizando uma lista de compras para uma festa que ela vai
+     * realizar. Crie um programa que permita à Barbie adicionar até 5 itens
+     * diferentes à lista de compras. Em seguida, exiba a lista completa para ela
+     * conferir. Dica: Use um vetor para armazenar os itens da lista de compras e um
+     * loop para solicitar os itens à Barbie.
+     */
 
-public static void Exercicio11(Scanner scanner) {
+    /*
+     * public static void Exercicio11(Scanner scanner) {
+     * PrintStream out = System.out;
+     * out.print("*** Lista de compras da BARBIE ***\n");
+     * 
+     * String[] objetos = new String[5];
+     * 
+     * for (int i = 0; i < objetos.length; i++) {
+     * out.print("Digite a " + (i + 1) + "ª peça da lista de compras: ");
+     * objetos[i] = scanner.next();
+     * }
+     * 
+     * out.println("\nAs peças na lista são:");
+     * for (int i = 0; i < objetos.length; i++) {
+     * System.out.println("A " + (i + 1) + "ª peça é: " + objetos[i]);
+     * }
+     * 
+     * out.println("\nAs peças na lista são:");
+     * for (int i = 0; i < objetos.length; i++) {
+     * System.out.println("As peças são: " + objetos[i]);
+     * }
+     * 
+     * }
+     */
 
-    // System.out.println(Charset.defaultCharset());
-    
-    PrintStream out = System.out;
+    /*
+     * Exercício 12:
+     * Oppenheimer está estudando as temperaturas de diferentes cidades. Crie um
+     * programa que permita a Oppenheimer registrar as temperaturas médias diárias
+     * de uma cidade durante uma semana (7 dias). Ao final, exiba a temperatura
+     * média da semana. Dica: Utilize um vetor para armazenar as temperaturas e
+     * calcule a média no final usando um loop "for".
+     */
 
-    out.print("*** Lista de compras da BARBIE ***\n");
+    public static void Exercicio12(Scanner scanner) {
+        PrintStream out = System.out;
 
-    String[] objetos = new String[5];
+        out.print("\n* * * 1ª Lista de temperaturas/médias em Uberaba/MG: * * *\n");
 
-        for (int i = 0; i < objetos.length; i++) {
-            out.print("Digite a " + (i + 1) + "ª peça da lista de compras: ");
-            objetos[i] = scanner.next();
+        float[] temperatura1 = new float[7];
+        float[] temperatura2 = new float[7];
+        String[] dias = { "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo" };
+
+        for (int i = 0; i < temperatura1.length; i++) {
+            out.print("Digite a temperatura de " + dias[i] + ": "); // Aqui insere o dia da semana
+            temperatura1[i] = scanner.nextFloat(); // Aqui pede a temperatura para ser digitada
+        }
+        
+        out.print("\n");
+
+        for (int i = 0; i < temperatura1.length; i++) { // Aqui vai retornar o dia/temperatura juntos.
+            out.println("A temperatura de " + temperatura1[i] + " ºC foi registrada no dia de " + dias[i] + ".");
         }
 
-        out.println("\nAs peças na lista são:");
-        for (int i = 0; i < objetos.length; i++) {
-            System.out.println("A " + (i + 1) + "ª peça é: " + objetos[i]);
+        float somaTemp1 = 0;
+
+        for (int i = 0; i < temperatura1.length; i++) {
+            somaTemp1 += temperatura1[i];
         }
 
-        out.println("\nAs peças na lista são:");
-        for (int i = 0; i < objetos.length; i++) {
-            System.out.println("As peças são: " + objetos[i]);
+        float mediaTemp1 = somaTemp1 / temperatura1.length;
+
+        out.println("\nA média das temperaturas é: " + mediaTemp1 + "ºC.");
+        out.printf("\nA média das temperaturas é %.2fºC", mediaTemp1);
+
+        out.print("\n");
+
+        out.print("\n> > > 2ª Lista de temperaturas/médias em Uberaba/MG: < < <\n");
+
+        for (int i = 0; i < temperatura2.length; i++) {
+            out.print("A " + (i + 1) + "ª temperatura registrada em graus C é: ");
+            temperatura2[i] = scanner.nextFloat();
         }
+
+        out.println("\n*** Registro das Temperaturas em Uberaba/MG: *** \n");
+        out.print("\n1. As temperaturas registradas são: ");
+        for (int i = 0; i < temperatura2.length; i++) {
+            out.print(temperatura2[i] + "ºC ");
+        }
+
+        out.println("\n\n2. As temperaturas registradas são: ");
+        for (int i = 0; i < temperatura2.length; i++) {
+            out.println("A " + (i + 1) + "ª temperatura registrada é de " + temperatura2[i] + "ºC.");
+        }
+
+
+        float somaTemp2 = 0;
+
+        for (int i = 0; i < temperatura2.length; i++) {
+            somaTemp2 += temperatura2[i];
+        }
+
+        float mediaTemp2 = somaTemp2 / temperatura2.length;
+
+        out.println("\nA média das temperaturas é: " + mediaTemp2 + "ºC.");
+        out.printf("\nA média das temperaturas é %.2f ºC", mediaTemp2);
 
     }
 
 }
-
-/*
- 
-out.println("\nAs peças na lista são:");
-        for (int i = 0; i < objetos.length; i++) {
-            System.out.print(objetos[i]);
-            if (i < objetos.length - 1) {
-                System.out.print(" "); // Adicionar espaço entre os itens, exceto no último
-            }
-        }
-        System.out.println(); // Pular linha após a lista de itens
-    }
-
-
- */

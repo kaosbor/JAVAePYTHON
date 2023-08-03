@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class Exercicios7a10 { // CLASSE EXERCICIOS
 
     public static void main(String[] args) { // Metodo MAIN SECUNDÁRIO (PRINCIPAL)
-        Scanner /* biblioteca */ scanner /* variavel */ = new Scanner(System.in); // BLIBLIOTECA + VARIAVEL = OBJETO
+        Scanner /* ?biblioteca */ scanner /* variavel */ = new Scanner(System.in); // BLIBLIOTECA + VARIAVEL = OBJETO
                                                                                   // SCANNER
 
         // PrintStream out = System.out;

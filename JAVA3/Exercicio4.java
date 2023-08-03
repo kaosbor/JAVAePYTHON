@@ -26,7 +26,7 @@ public class Exercicio4 {
                 out.println("Aluno " + (i + 1 ) + ": " + notas[i]);
             }
         
-        out.println("\nA médias da nota dos alunos é: " + media + ".");
+        out.println("\nA média das notas dos alunos é: " + media + ".");
 
     }
 }
