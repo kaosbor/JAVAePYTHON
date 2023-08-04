@@ -1,4 +1,4 @@
-/* Informações gerais *** Título: Exercícios de Java. Autor: RB. Date: 01/08/2023. Instituição: Senai. Curso: Desenvolvimento em Sistemas. */
+/* Informações gerais *** Título: Exercícios de Java. Autor: RB. Date: 01/08/2023. Instituição: Senai. Curso: Desenvolvimento em Sistemas. Exercícios: 07 a 10. */
 
 package JAVA3;
 
