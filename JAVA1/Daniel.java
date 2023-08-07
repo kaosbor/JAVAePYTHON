@@ -1,4 +1,4 @@
-package JAVA1;
+package java1;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 

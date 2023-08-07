@@ -1,6 +1,6 @@
 /* Exercício 4: Crie um programa que declare um vetor com 6 notas de alunos (valores de 0 a 10). Calcule a média dessas notas e exiba o resultado. Dica: Percorra o vetor somando todas as notas e, no final, divida a soma pela quantidade de notas para obter a média. */
 
-package JAVA3;
+package java3;
 
 import java.io.PrintStream;
 

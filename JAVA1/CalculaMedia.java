@@ -1,4 +1,4 @@
-package JAVA1;
+package java1;
 import java.util.Scanner;
 
 public class CalculaMedia {

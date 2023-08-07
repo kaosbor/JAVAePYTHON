@@ -1,6 +1,4 @@
-/* Exercício 6: Crie um programa que declare um vetor com 4 palavras digitadas pelo usuário. Em seguida, exiba as palavras na ordem em que foram digitadas. Dica: Use um loop "for" para percorrer o vetor e exibir cada palavra com o comando "System.out.println()". */
-
-package JAVA3;
+package java3;
 
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -34,3 +32,5 @@ public class Exercicio6 {
         scanner.close();
     }
 }
+
+/* Exercício 6: Crie um programa que declare um vetor com 4 palavras digitadas pelo usuário. Em seguida, exiba as palavras na ordem em que foram digitadas. Dica: Use um loop "for" para percorrer o vetor e exibir cada palavra com o comando "System.out.println()". */

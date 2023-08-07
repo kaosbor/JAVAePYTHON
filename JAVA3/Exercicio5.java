@@ -3,7 +3,7 @@
 Crie um programa que declare um vetor com 7 números inteiros. Conte quantos deles são números pares e exiba o resultado.
 Dica: Use um loop "for" para percorrer o vetor e, dentro do loop, verifique se cada número é par usando o operador de módulo (%). */
 
-package JAVA3;
+package java3;
 
 import java.io.PrintStream;
 

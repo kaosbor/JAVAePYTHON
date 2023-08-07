@@ -12,14 +12,10 @@ Exercício 19: A Barbie está organizando uma competição de natação e precis
 Exercício 20: Oppenheimer está estudando os hábitos alimentares de um grupo de pessoas. Crie um programa que permita a Oppenheimer registrar a quantidade de calorias consumidas por cada pessoa durante uma semana (7 dias). Ao final, exiba a pessoa que consumiu a maior quantidade de calorias em um único dia. Dica: Use uma matriz para armazenar as calorias consumidas por cada pessoa em cada dia. Utilize loops "for" aninhados para solicitar os dados a Oppenheimer e encontrar a maior quantidade de calorias em um único dia.
 */
 
-package java4;
-
-// import java.nio.charset.Charset;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.io.PrintStream;
-
 import java.util.Scanner;
-
 import java.util.Random; // Aleatória
 
 public class Exercicios11a20 {
@@ -32,15 +28,13 @@ public class Exercicios11a20 {
         // Exercicios11a20.Exercicio11(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio12(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio13(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        Exercicios11a20.Exercicio14(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        
+        // Exercicios11a20.Exercicio14(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+
         scanner.close();
     }
 
-    /*
-     * *********
-     * Exercício 11:
+    /* Exercício 11:
      * A Lili está organizando uma lista de compras para uma festa que ela vai
      * realizar. Crie um programa que permita à Lili adicionar até 5 itens
      * diferentes à lista de compras. Em seguida, exiba a lista completa para ela
@@ -240,5 +234,49 @@ public class Exercicios11a20 {
 
         out.println("\n\nA média de horas trabalhadas por tarefa é: " + MediaTotal);
 
+    }
+
+      /*
+     * *********
+     * Exercício 15:
+     * Sarah está organizando um sorteio de brindes para sua festa e precisa
+     * sortear aleatoriamente 3 números dentre os convidados. Crie um programa que
+     * permita à Sarah registrar os nomes dos convidados e, ao final, exiba os
+     * nomes dos 3 sorteados. Dica: Use um vetor para armazenar os nomes dos
+     * convidados e a classe `java.util.Random` para fazer o sorteio.
+     */
+
+     public static void Exercicio15(Scanner scanner) {
+        PrintStream out = System.out;
+Scanner scanner = new Scanner(System.in);
+        System.out.println("\n* * * EXERCÍCIO 15 - SORTEIO DE BRINDES * * *\n");
+        System.out.println("> > > SORTEIO DE 3 CONVIDADOS < < <");
+
+        System.out.print("Quantos convidados participarão do sorteio? ");
+        int NrConvidados = scanner.nextInt();
+        scanner.nextLine(); // Consumir a quebra de linha após o nextInt()
+
+        List<String> NomeConvidados = new ArrayList<>();
+
+        for (int i = 0; i < NrConvidados; i++) {
+            System.out.print("Digite o nome do convidado " + (i + 1) + ": ");
+            NomeConvidados.add(scanner.nextLine());
+        }
+
+        // Embaralhar a lista de convidados usando o algoritmo de Fisher-Yates
+        Random random = new Random();
+        for (int i = NomeConvidados.size() - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            String temp = NomeConvidados.get(i);
+            NomeConvidados.set(i, NomeConvidados.get(j));
+            NomeConvidados.set(j, temp);
+        }
+
+        List<String> sorteados = NomeConvidados.subList(0, Math.min(3, NomeConvidados.size()));
+
+        System.out.println("\nOs 3 sorteados são:");
+        for (int i = 0; i < sorteados.size(); i++) {
+            System.out.println((i + 1) + ". " + sorteados.get(i));
+        }
     }
 }

@@ -1,6 +1,6 @@
 /* Exercício 3: Crie um programa que declare um vetor com 8 números inteiros. Em seguida, encontre e exiba o maior valor presente no vetor. Dica: Utilize uma variável para armazenar o valor do maior número enquanto percorre o vetor com um loop "for". */
 
-package JAVA3;
+package java3;
 
 import java.io.PrintStream;
 import java.util.Scanner;

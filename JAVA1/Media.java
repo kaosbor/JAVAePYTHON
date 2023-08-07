@@ -1,4 +1,4 @@
-package JAVA1;
+package java1;
 public class Media { // Classe
     public static void main(String[] args) { // Método (main)
         System.out.println("Calcular a média:");

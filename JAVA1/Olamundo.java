@@ -1,4 +1,4 @@
-package JAVA1;
+package java1;
 
 //Em resumo, esse código define uma classe chamada "olamundo" que contém um método main. Dentro desse método, usamos o método println para imprimir a mensagem "ola mundo" no console.
 public class Olamundo { // Aqui estamos definindo uma classe chamada "olamundo". O nome da classe deve começar com uma letra maiúscula e corresponder ao nome do arquivo que contém o código.

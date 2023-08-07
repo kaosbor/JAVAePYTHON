@@ -1,5 +1,5 @@
 /* Exercício 1 em JAVA: Crie um programa que declare um vetor com 5 números inteiros. Em seguida, some todos os elementos do vetor e exiba o resultado. Dica: Use um loop "for" para percorrer o vetor e vá acumulando a soma dos elementos em uma variável. */
-package JAVA3;
+package java3;
 
 import java.io.PrintStream;
 

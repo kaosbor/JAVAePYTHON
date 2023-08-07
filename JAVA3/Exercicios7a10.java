@@ -1,6 +1,6 @@
 /* Informações gerais *** Título: Exercícios de Java. Autor: RB. Date: 01/08/2023. Instituição: Senai. Curso: Desenvolvimento em Sistemas. Exercícios: 07 a 10. */
 
-package JAVA3;
+package java3;
 
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -27,9 +27,9 @@ public class Exercicios7a10 { // CLASSE EXERCICIOS
         System.out.println("\033[h\033[2J"); // LIMPA A TELA
 
         // NomedaClasse.NomedoMetodo
-        Exercicios7a10.Exercicio7(scanner); // Funções
-        Exercicios7a10.Exercicio8(scanner); // Funções
-        Exercicios7a10.Exercicio9(scanner); // Funções
+        // Exercicios7a10.Exercicio7(scanner); // Funções
+        // Exercicios7a10.Exercicio8(scanner); // Funções
+        // Exercicios7a10.Exercicio9(scanner); // Funções
         Exercicios7a10.Exercicio10(scanner); // Funções
 
         scanner.close();
@@ -173,3 +173,4 @@ public class Exercicios7a10 { // CLASSE EXERCICIOS
         // scanner.close();
     }
 }
+
