@@ -13,16 +13,12 @@ Exercício 20: Oppenheimer está estudando os hábitos alimentares de um grupo d
 */
 
 package java4;
-
 // import java.nio.charset.Charset;
-
 import java.io.PrintStream;
-
 import java.util.Scanner;
-
 import java.util.Random; // Aleatória
 
-public class Exercicios11a20 {
+public class ExerciciosB11a20 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -32,7 +28,7 @@ public class Exercicios11a20 {
         // Exercicios11a20.Exercicio11(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio12(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio13(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        Exercicios11a20.Exercicio14(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        ExerciciosB11a20.Exercicio14(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         
         scanner.close();

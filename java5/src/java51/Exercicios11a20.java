@@ -1,10 +1,6 @@
 /* >>> Informações gerais <<<
 Título: Exercícios de Java. Autor: RB. Date: 01/08/2023. Instituição: Senai. Curso: Desenvolvimento em Sistemas. Exercícios: 11 a 20.
 
-Exercício 16: Oppenheimer está estudando as vendas de um produto em uma loja. Crie um programa que permita a Oppenheimer registrar as vendas diárias desse produto durante uma semana (7 dias). Ao final, exiba a média de vendas diárias da semana. Dica: Utilize um vetor para armazenar as vendas diárias e calcule a média no final usando um loop "for".
-
-Exercício 17: A Barbie está organizando um torneio de quebra-cabeças para seus amigos. Cada amigo resolveu um certo número de quebra-cabeças e ela precisa saber quantos quebra-cabeças cada amigo resolveu. Crie um programa que permita à Barbie inserir o nome de até 5 amigos e a quantidade de quebra-cabeças resolvidos por cada um. Ao final, exiba o nome e a quantidade de quebra-cabeças de cada amigo. Dica: Use dois vetores, um para armazenar os nomes dos amigos e outro para as quantidades de quebra-cabeças resolvidos por cada um. Use um loop para solicitar os dados à Barbie.
-
 Exercício 18: Oppenheimer está estudando a variação do preço de uma ação na bolsa de valores. Crie um programa que permita a Oppenheimer registrar o preço da ação em até 10 dias diferentes. Em seguida, exiba a maior variação de preço entre dois dias consecutivos. Dica: Use um vetor para armazenar os preços e faça um loop para calcular a variação entre cada par de dias consecutivos.
 
 Exercício 19: A Barbie está organizando uma competição de natação e precisa registrar os tempos de cada nadador. Crie um programa que permita à Barbie inserir o nome de até 5 nadadores e o tempo que cada um levou para concluir a prova. Ao final, exiba o nome do nadador vencedor. Dica: Use dois vetores, um para armazenar os nomes dos nadadores e outro para os tempos. Utilize um loop para solicitar os dados à Barbie e encontre o tempo mínimo para determinar o vencedor.
@@ -29,12 +25,14 @@ public class Exercicios11a20 {
         // Exercicios11a20.Exercicio12(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio13(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio14(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        // Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        // Exercicios11a20.Exercicio16(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio17(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
 
         scanner.close();
     }
 
-    /* Exercício 11:
+    /* *** Exercício 11:
      * A Lili está organizando uma lista de compras para uma festa que ela vai
      * realizar. Crie um programa que permita à Lili adicionar até 5 itens
      * diferentes à lista de compras. Em seguida, exiba a lista completa para ela
@@ -67,9 +65,7 @@ public class Exercicios11a20 {
 
     }
 
-    /*
-     * *********
-     * Exercício 12:
+    /* *** Exercício 12:
      * Oppenheimer está estudando as temperaturas de diferentes cidades. Crie um
      * programa que permita a Oppenheimer registrar as temperaturas médias diárias
      * de uma cidade durante uma semana (7 dias). Ao final, exiba a temperatura
@@ -143,9 +139,7 @@ public class Exercicios11a20 {
 
     }
 
-    /*
-     * *********
-     * Exercício 13 (ANNA):
+    /* *** Exercício 13 (ANNA):
      * A ANNA está brincando com seus amigos e criou um jogo em que eles devem
      * adivinhar um número secreto entre 1 e 100. Crie um programa que gere um
      * número aleatório entre 1 e 100 e permita que os amigos da Anna tentem
@@ -182,12 +176,11 @@ public class Exercicios11a20 {
         } while // do while repete pelo menos 1x - while não precisa 1x para repetir - for : são
                 // laços de repetição
 
-        (palpite != numeroSecreto); // O laço é determinado aqui.
+        (palpite != numeroSecreto); // Esta é a variável que determina o laço de repetição.
 
     }
 
-    /*
-     * Exercício 14:
+    /* *** Exercício 14:
      * Oppenheimer está trabalhando em um projeto e precisa armazenar as horas
      * gastas em cada tarefa. Crie um programa que permita a Oppenheimer inserir as
      * horas gastas em até 5 tarefas diferentes. Em seguida, exiba o total de horas
@@ -233,12 +226,9 @@ public class Exercicios11a20 {
         float MediaTotal = somah / somaobjet; // Correção da média
 
         out.println("\n\nA média de horas trabalhadas por tarefa é: " + MediaTotal);
-
     }
 
-      /*
-     * *********
-     * Exercício 15:
+    /* *** Exercício 15:
      * Sarah está organizando um sorteio de brindes para sua festa e precisa
      * sortear aleatoriamente 3 números dentre os convidados. Crie um programa que
      * permita à Sarah registrar os nomes dos convidados e, ao final, exiba os
@@ -246,13 +236,12 @@ public class Exercicios11a20 {
      * convidados e a classe `java.util.Random` para fazer o sorteio.
      */
 
-     public static void Exercicio15(Scanner scanner) {
+    public static void Exercicio15(Scanner scanner) {
         PrintStream out = System.out;
-Scanner scanner = new Scanner(System.in);
         System.out.println("\n* * * EXERCÍCIO 15 - SORTEIO DE BRINDES * * *\n");
         System.out.println("> > > SORTEIO DE 3 CONVIDADOS < < <");
 
-        System.out.print("Quantos convidados participarão do sorteio? ");
+        out.print("Quantos convidados participarão do sorteio? ");
         int NrConvidados = scanner.nextInt();
         scanner.nextLine(); // Consumir a quebra de linha após o nextInt()
 
@@ -279,4 +268,80 @@ Scanner scanner = new Scanner(System.in);
             System.out.println((i + 1) + ". " + sorteados.get(i));
         }
     }
+
+    /* *** Exercício 16:
+    Gilberto está estudando as vendas de um produto em uma loja. Crie um programa que permita a Gilberto registrar as vendas diárias desse produto durante uma semana (7 dias). Ao final, exiba a média de vendas diárias da semana. Dica: Utilize um vetor para armazenar as vendas diárias e calcule a média no final usando um loop "for".
+     */
+
+    public static void Exercicio16(Scanner scanner) {
+        PrintStream out = System.out;
+        out.print("\033[h\033[2J");
+        out.println("\n* * * EXERCÍCIO 16 - PRODUTOS LOJA * * *\n");
+        out.println("> > > REGISTRO DE VENDAS DIÁRIAS < < <");
+
+    double[] vendasDiarias = new double[7];
+    String[] diaSemana = { "segunda", "terça", "quarta", "quinta", "sexta", "sábado", "domingo" };
+
+   for (int i = 0; i < vendasDiarias.length; i++) {
+    out.print("Digite o " + (i+1) + "º valor de vendas para " + diaSemana[i] + ": ");
+    vendasDiarias[i] = scanner.nextDouble();
+    }
+
+    double totalVendas = 0;
+
+    for (double venda : vendasDiarias) { // :  
+        totalVendas += venda;
+    }
+
+        double mediaVendas = (totalVendas / vendasDiarias.length);
+
+        out.println("\nForam registradas um total de " + vendasDiarias.length + " vendas, sendo uma para cada dia da semana.");
+        out.printf("A média de vendas diárias da semana é de R$ %.2f." , mediaVendas);
+
+    }
+
+    /* *** Exercício 17:
+    Sarah está organizando um torneio de quebra-cabeças para seus amigos. Cada amigo resolveu um certo número de quebra-cabeças e ela precisa saber quantos quebra-cabeças cada amigo resolveu. Crie um programa que permita à Sarah inserir o nome de até 5 amigos e a quantidade de quebra-cabeças resolvidos por cada um. Ao final, exiba o nome e a quantidade de quebra-cabeças de cada amigo. Dica: Use dois vetores, um para armazenar os nomes dos amigos e outro para as quantidades de quebra-cabeças resolvidos por cada um. Use um loop para solicitar os dados à Sarah.*/
+
+    public static void Exercicio17(Scanner scanner) {
+
+            PrintStream out = System.out;
+            out.print("\033[h\033[2J");
+
+            out.println("\n* * * EXERCÍCIO 17 - QUEBRA-CABEÇAS * * *\n");
+            out.println("> > > RESOLUÇÃO DE QUEBRA-CABEÇA < < <");
+
+        out.print("Quantos amigos jogarão participarão do sorteio? ");
+        int NrAmigos = scanner.nextInt();
+        scanner.nextLine(); // Consumir a quebra de linha após o nextInt()
+
+        List<String> NomeAmigos = new ArrayList<>();
+
+        for (int i = 0; i < NrAmigos; i++) {
+        out.print("Digite o nome do amigo " + (i + 1) + ": ");
+            NomeAmigos.add(scanner.nextLine());
+        }
+
+/*
+
+
+            out.print("\nQuantos amigos brincarão: ");
+            int NrAmigos = scanner.nextInt();
+            out.println("Um total de " + NrAmigos + " amigos estarão brincando.");
+
+            out.print("\nQuantos quebra-cabeças cada amigo resolveu: ");
+            int qcabeça = scanner.nextInt();
+            out.println("Foram resolvidos um total de " + qcabeça + " quebra-cabeças.");
+
+
+
+
+
+            // do while - laço de repetição mais amplo (usa variável de forma mais ampla)
+            // for - laço de repetição mais específico (conforma a variável determinada)
+*/
+
+    }
+    
+
 }
