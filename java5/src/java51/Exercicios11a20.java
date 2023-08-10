@@ -311,12 +311,21 @@ public class Exercicios11a20 {
         out.println("\n* * * EXERCÍCIO 17 - QUEBRA-CABEÇAS * * *\n");
         out.println("> > > RESOLUÇÃO DE QUEBRA-CABEÇA < < <");
 
+<<<<<<< HEAD
         // ***********************
 
         out.print("Quantos amigos jogarão quebra-cabeça? ");
-        int NrAmigos = scanner.nextInt();
-        scanner.nextLine(); // Consumir a quebra de linha após o nextInt()
 
+        out.print("Quantos amigos jogarão participarão do sorteio (5)? ");
+        int NrAmigos = scanner.nextInt();
+        scanner.nextLine(); // Faz quebra de linha a cada valor após o nextInt()
+
+        /* 
+        out.print("Quantos quebra-cabeças cada amigo resolveu? ");
+        int NrAmigos = scanner.nextInt();
+        scanner.nextLine(); // Faz quebra de linha a cada valor após o nextInt()
+        */
+        
         List<String> NomeAmigos = new ArrayList<>();
         List<Integer> NomeJogos = new ArrayList<>();
 
@@ -333,6 +342,18 @@ public class Exercicios11a20 {
 
         // ***********************
         out.println("\nNOMES DO AMIGOS INSERIDOS:"); 
+            out.print("Digite o nome do amigo " + (i + 1) + ": ");
+            NomeAmigos.add(scanner.nextLine());
+        }
+
+        for (int i = 0; i < NrAmigos; i++) {
+            out.println("O nome do " + (i + 1) + "º é " + NomeAmigos.get(i) + ".");
+        }
+        
+
+
+/*
+>>>>>>> 91e0073a2539d7ac727cbc4b02d7bd919de144b4
 
         // Retorno / Saída
         for (int i = 0; i < NrAmigos; i++) {
