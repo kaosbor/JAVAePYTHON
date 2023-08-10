@@ -8,9 +8,9 @@ Exercício 19: A Barbie está organizando uma competição de natação e precis
 Exercício 20: Oppenheimer está estudando os hábitos alimentares de um grupo de pessoas. Crie um programa que permita a Oppenheimer registrar a quantidade de calorias consumidas por cada pessoa durante uma semana (7 dias). Ao final, exiba a pessoa que consumiu a maior quantidade de calorias em um único dia. Dica: Use uma matriz para armazenar as calorias consumidas por cada pessoa em cada dia. Utilize loops "for" aninhados para solicitar os dados a Oppenheimer e encontrar a maior quantidade de calorias em um único dia.
 */
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.PrintStream;
 import java.util.Scanner;
 import java.util.Random; // Aleatória
 
@@ -305,43 +305,59 @@ public class Exercicios11a20 {
 
     public static void Exercicio17(Scanner scanner) {
 
-            PrintStream out = System.out;
-            out.print("\033[h\033[2J");
+        PrintStream out = System.out;
+        out.print("\033[h\033[2J");
 
-            out.println("\n* * * EXERCÍCIO 17 - QUEBRA-CABEÇAS * * *\n");
-            out.println("> > > RESOLUÇÃO DE QUEBRA-CABEÇA < < <");
+        out.println("\n* * * EXERCÍCIO 17 - QUEBRA-CABEÇAS * * *\n");
+        out.println("> > > RESOLUÇÃO DE QUEBRA-CABEÇA < < <");
 
-        out.print("Quantos amigos jogarão participarão do sorteio? ");
+        // ***********************
+
+        out.print("Quantos amigos jogarão quebra-cabeça? ");
         int NrAmigos = scanner.nextInt();
         scanner.nextLine(); // Consumir a quebra de linha após o nextInt()
 
         List<String> NomeAmigos = new ArrayList<>();
+        List<Integer> NomeJogos = new ArrayList<>();
 
+        // ***********************
+
+        // ***********************
+        out.println("\nNOME DOS AMIGOS A DIGITAR:"); 
+
+        // Inserção / Entrada
         for (int i = 0; i < NrAmigos; i++) {
-        out.print("Digite o nome do amigo " + (i + 1) + ": ");
+            out.print("Digite o nome do " + (i + 1) + "º amigo de Sarah: ");
             NomeAmigos.add(scanner.nextLine());
         }
 
-/*
+        // ***********************
+        out.println("\nNOMES DO AMIGOS INSERIDOS:"); 
 
+        // Retorno / Saída
+        for (int i = 0; i < NrAmigos; i++) {
+            out.println("O nome do " + (i + 1) + "º amigo é de Sarah é: " + NomeAmigos.get(i));            
+        }
+       
+        // ***********************
+        out.println("\nQUANTOS QUEBRA-CABEÇAS:"); 
 
-            out.print("\nQuantos amigos brincarão: ");
-            int NrAmigos = scanner.nextInt();
-            out.println("Um total de " + NrAmigos + " amigos estarão brincando.");
+        for (int i = 0; i < NrAmigos; i++) {
+        out.print("Quantos jogos de quebra-cabeça o " + (i+1) + "º amigo de Sarah com nome de " + NomeAmigos.get(i) + " resolveu? ");
+        NomeJogos.add(scanner.nextInt());
+        }
 
-            out.print("\nQuantos quebra-cabeças cada amigo resolveu: ");
-            int qcabeça = scanner.nextInt();
-            out.println("Foram resolvidos um total de " + qcabeça + " quebra-cabeças.");
+        // ***********************
+        out.println("\nAMIGOS E QUEBRA-CABEÇAS:"); 
 
+        // Retorno / Saída
+        for (int i = 0; i < NrAmigos; i++) {
+            out.println("O " + (i + 1) + "º amigo de Sarah de nome " + NomeAmigos.get(i) + " resolveu " + NomeJogos.get(i) + " quebra-cabeças.");            
+        }
 
+        // ***********************
 
-
-
-            // do while - laço de repetição mais amplo (usa variável de forma mais ampla)
-            // for - laço de repetição mais específico (conforma a variável determinada)
-*/
-
+        // do while - laço de repetição mais amplo (usa variável de forma mais ampla)
+        // for - laço de repetição mais específico (conforma a variável determinada)
     }
-    
-
 }
