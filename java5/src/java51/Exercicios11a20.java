@@ -311,25 +311,15 @@ public class Exercicios11a20 {
         out.println("\n* * * EXERCÍCIO 17 - QUEBRA-CABEÇAS * * *\n");
         out.println("> > > RESOLUÇÃO DE QUEBRA-CABEÇA < < <");
 
-<<<<<<< HEAD
         // ***********************
 
-        out.print("Quantos amigos jogarão quebra-cabeça? ");
-
-        out.print("Quantos amigos jogarão participarão do sorteio (5)? ");
+        out.print("Quantos amigos jogarão participarão do sorteio (n)? ");
         int NrAmigos = scanner.nextInt();
         scanner.nextLine(); // Faz quebra de linha a cada valor após o nextInt()
-
-        /* 
-        out.print("Quantos quebra-cabeças cada amigo resolveu? ");
-        int NrAmigos = scanner.nextInt();
-        scanner.nextLine(); // Faz quebra de linha a cada valor após o nextInt()
-        */
-        
+               
         List<String> NomeAmigos = new ArrayList<>();
+    
         List<Integer> NomeJogos = new ArrayList<>();
-
-        // ***********************
 
         // ***********************
         out.println("\nNOME DOS AMIGOS A DIGITAR:"); 
@@ -341,20 +331,7 @@ public class Exercicios11a20 {
         }
 
         // ***********************
-        out.println("\nNOMES DO AMIGOS INSERIDOS:"); 
-            out.print("Digite o nome do amigo " + (i + 1) + ": ");
-            NomeAmigos.add(scanner.nextLine());
-        }
-
-        for (int i = 0; i < NrAmigos; i++) {
-            out.println("O nome do " + (i + 1) + "º é " + NomeAmigos.get(i) + ".");
-        }
-        
-
-
-/*
->>>>>>> 91e0073a2539d7ac727cbc4b02d7bd919de144b4
-
+        out.println("\nNOME DOS AMIGOS DIGITADOS:"); 
         // Retorno / Saída
         for (int i = 0; i < NrAmigos; i++) {
             out.println("O nome do " + (i + 1) + "º amigo é de Sarah é: " + NomeAmigos.get(i));            
@@ -380,5 +357,13 @@ public class Exercicios11a20 {
 
         // do while - laço de repetição mais amplo (usa variável de forma mais ampla)
         // for - laço de repetição mais específico (conforma a variável determinada)
-    }
+     }
+
+     /* *** Exercício 17:
+    Sarah está organizando um torneio de quebra-cabeças para seus amigos. Cada amigo resolveu um certo número de quebra-cabeças e ela precisa saber quantos quebra-cabeças cada amigo resolveu. Crie um programa que permita à Sarah inserir o nome de até 5 amigos e a quantidade de quebra-cabeças resolvidos por cada um. Ao final, exiba o nome e a quantidade de quebra-cabeças de cada amigo. Dica: Use dois vetores, um para armazenar os nomes dos amigos e outro para as quantidades de quebra-cabeças resolvidos por cada um. Use um loop para solicitar os dados à Sarah.*/
+
+    public static void Exercicio17(Scanner scanner) {
+
+
+
 }
