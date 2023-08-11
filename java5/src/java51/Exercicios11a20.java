@@ -1,8 +1,6 @@
 /* >>> Informações gerais <<<
 Título: Exercícios de Java. Autor: RB. Date: 01/08/2023. Instituição: Senai. Curso: Desenvolvimento em Sistemas. Exercícios: 11 a 20.
 
-Exercício 18: Oppenheimer está estudando a variação do preço de uma ação na bolsa de valores. Crie um programa que permita a Oppenheimer registrar o preço da ação em até 10 dias diferentes. Em seguida, exiba a maior variação de preço entre dois dias consecutivos. Dica: Use um vetor para armazenar os preços e faça um loop para calcular a variação entre cada par de dias consecutivos.
-
 Exercício 19: A Barbie está organizando uma competição de natação e precisa registrar os tempos de cada nadador. Crie um programa que permita à Barbie inserir o nome de até 5 nadadores e o tempo que cada um levou para concluir a prova. Ao final, exiba o nome do nadador vencedor. Dica: Use dois vetores, um para armazenar os nomes dos nadadores e outro para os tempos. Utilize um loop para solicitar os dados à Barbie e encontre o tempo mínimo para determinar o vencedor.
 
 Exercício 20: Oppenheimer está estudando os hábitos alimentares de um grupo de pessoas. Crie um programa que permita a Oppenheimer registrar a quantidade de calorias consumidas por cada pessoa durante uma semana (7 dias). Ao final, exiba a pessoa que consumiu a maior quantidade de calorias em um único dia. Dica: Use uma matriz para armazenar as calorias consumidas por cada pessoa em cada dia. Utilize loops "for" aninhados para solicitar os dados a Oppenheimer e encontrar a maior quantidade de calorias em um único dia.
@@ -27,7 +25,8 @@ public class Exercicios11a20 {
         // Exercicios11a20.Exercicio14(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio16(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        Exercicios11a20.Exercicio17(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        // Exercicios11a20.Exercicio17(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio18(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
 
         scanner.close();
     }
@@ -359,11 +358,52 @@ public class Exercicios11a20 {
         // for - laço de repetição mais específico (conforma a variável determinada)
      }
 
-     /* *** Exercício 17:
-    Sarah está organizando um torneio de quebra-cabeças para seus amigos. Cada amigo resolveu um certo número de quebra-cabeças e ela precisa saber quantos quebra-cabeças cada amigo resolveu. Crie um programa que permita à Sarah inserir o nome de até 5 amigos e a quantidade de quebra-cabeças resolvidos por cada um. Ao final, exiba o nome e a quantidade de quebra-cabeças de cada amigo. Dica: Use dois vetores, um para armazenar os nomes dos amigos e outro para as quantidades de quebra-cabeças resolvidos por cada um. Use um loop para solicitar os dados à Sarah.*/
+     /* *** Exercício 18:
+     Leandro está estudando a variação do preço de uma ação na bolsa de valores. Crie um programa que permita a Leandro registrar o preço da ação em até 10 dias diferentes. Em seguida, exiba a maior variação de preço entre dois dias consecutivos. Dica: use um vetor para armazenar os preços e faça um loop para calcular a variação entre cada par de dias consecutivos.*/
 
-    public static void Exercicio17(Scanner scanner) {
+    public static void Exercicio18 (Scanner scanner) {
+        PrintStream out = System.out;
+        out.print("\033[h\033[2J");
 
+        out.println("\n* * * EXERCÍCIO 18 - BOLSA DE VALORES * * *\n");
+        out.println("> > > BOLSA DE VALORES < < <");
 
+         // ***********************
 
+        double[] ValorAcao = new double[10];
+        String[] dias = { "primeiro", "segundo", "terceiro", "quarto", "quinto", "sexto", "sétimo", "oitavo", "nono", "décimo" };
+        double MaiorVariacao = 0.0;
+        int DiaMaiorVariacao = 0;
+
+        // Entrada de valores X dia.
+        out.println("\n> > > DIGITE VALOR DA AÇÃO < < <"); 
+        for (int i = 0; i < ValorAcao.length; i++) {
+            out.printf("Valor AÇÃO no %s dia é de R$ ", dias[i]); // Insere o dia da semana
+            ValorAcao[i] = scanner.nextDouble(); // Aqui pede a temperatura para ser digitada
+        }
+
+        // Retonro de valores X dia.
+        out.println("\n> > > O VALOR DA AÇÃO É < < <"); 
+        // Retorno / Saída
+        for (int i = 0; i < ValorAcao.length; i++) {
+        out.println("O valor da ação no " + dias[i] + " dia é de R$ " + ValorAcao[i] + ".");
+        }
+
+        // Calcular a maior variação de preço entre dias consecutivos
+
+        for (int i = 0; i < (ValorAcao.length - 1); i++) {
+            double variacao = Math.abs(ValorAcao[i + 1] - ValorAcao[i]);
+            if (variacao > MaiorVariacao) {
+                MaiorVariacao = variacao;
+                DiaMaiorVariacao = i;
+            }
+        }      
+
+        if (DiaMaiorVariacao > 0 && DiaMaiorVariacao < ValorAcao.length) {
+            out.println("\nMaior variação de preço entre dias consecutivos:");
+            out.printf("Do %s para o %s dia a variação foi de: R$ %.2f\n", dias[DiaMaiorVariacao - 1], dias[DiaMaiorVariacao], MaiorVariacao);
+        } else {
+            out.println("\nNão há dados suficientes para calcular a maior variação de preço entre dias consecutivos.");
+        }
+    }
 }
