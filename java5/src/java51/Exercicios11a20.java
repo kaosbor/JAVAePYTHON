@@ -1,10 +1,5 @@
 /* >>> Informações gerais <<<
-Título: Exercícios de Java. Autor: RB. Date: 01/08/2023. Instituição: Senai. Curso: Desenvolvimento em Sistemas. Exercícios: 11 a 20.
-
-Exercício 19: A Barbie está organizando uma competição de natação e precisa registrar os tempos de cada nadador. Crie um programa que permita à Barbie inserir o nome de até 5 nadadores e o tempo que cada um levou para concluir a prova. Ao final, exiba o nome do nadador vencedor. Dica: Use dois vetores, um para armazenar os nomes dos nadadores e outro para os tempos. Utilize um loop para solicitar os dados à Barbie e encontre o tempo mínimo para determinar o vencedor.
-
-Exercício 20: Oppenheimer está estudando os hábitos alimentares de um grupo de pessoas. Crie um programa que permita a Oppenheimer registrar a quantidade de calorias consumidas por cada pessoa durante uma semana (7 dias). Ao final, exiba a pessoa que consumiu a maior quantidade de calorias em um único dia. Dica: Use uma matriz para armazenar as calorias consumidas por cada pessoa em cada dia. Utilize loops "for" aninhados para solicitar os dados a Oppenheimer e encontrar a maior quantidade de calorias em um único dia.
-*/
+Título: Exercícios de Java - Array 1.2 28/07/2023. Autor: RB. Date: 01/08/2023. Instituição: Senai. Curso: Desenvolvimento em Sistemas. Exercícios: 11 a 20. */
 
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -26,7 +21,9 @@ public class Exercicios11a20 {
         // Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio16(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         // Exercicios11a20.Exercicio17(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        Exercicios11a20.Exercicio18(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        // Exercicios11a20.Exercicio18(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        // Exercicios11a20.Exercicio19(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio20(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
 
         scanner.close();
     }
@@ -65,8 +62,8 @@ public class Exercicios11a20 {
     }
 
     /* *** Exercício 12:
-     * Oppenheimer está estudando as temperaturas de diferentes cidades. Crie um
-     * programa que permita a Oppenheimer registrar as temperaturas médias diárias
+     * Thor está estudando as temperaturas de diferentes cidades. Crie um
+     * programa que permita a Thor registrar as temperaturas médias diárias
      * de uma cidade durante uma semana (7 dias). Ao final, exiba a temperatura
      * média da semana. Dica: Utilize um vetor para armazenar as temperaturas e
      * calcule a média no final usando um loop "for".
@@ -180,11 +177,11 @@ public class Exercicios11a20 {
     }
 
     /* *** Exercício 14:
-     * Oppenheimer está trabalhando em um projeto e precisa armazenar as horas
-     * gastas em cada tarefa. Crie um programa que permita a Oppenheimer inserir as
+     * Thor está trabalhando em um projeto e precisa armazenar as horas
+     * gastas em cada tarefa. Crie um programa que permita a Thor inserir as
      * horas gastas em até 5 tarefas diferentes. Em seguida, exiba o total de horas
      * trabalhadas. Dica: Use um vetor para armazenar as horas de cada tarefa e um
-     * loop para solicitar os dados ao Oppenheimer.
+     * loop para solicitar os dados ao Thor.
      */
 
     public static void Exercicio14(Scanner scanner) {
@@ -406,4 +403,130 @@ public class Exercicios11a20 {
             out.println("\nNão há dados suficientes para calcular a maior variação de preço entre dias consecutivos.");
         }
     }
+ 
+        /* *** Exercício 19:
+        A Barbie está organizando uma competição de natação e precisa registrar os tempos de cada nadador. Crie um programa que permita à Barbie inserir o nome de até 5 nadadores e o tempo que cada um levou para concluir a prova. Ao final, exiba o nome do nadador vencedor. Dica: Use dois vetores, um para armazenar os nomes dos nadadores e outro para os tempos. Utilize um loop para solicitar os dados à Barbie e encontre o tempo mínimo para determinar o vencedor. */
+
+        public static void Exercicio19 (Scanner scanner) {
+        PrintStream out = System.out;
+        out.print("\033[h\033[2J");
+
+        out.println("\n* * * EXERCÍCIO 19 - NADADORES X POSIÇÃO * * *\n");
+        out.println("> > > NADADORES < < <");
+
+         // ***********************
+
+        String[] nomes = new String[5];
+        double[] tempos = new double[5];
+
+        out.println("Registro da Competição de Natação");
+
+        for (int i = 0; i < nomes.length; i++) {
+            System.out.print("Digite o nome do " + (i + 1) + "º nadador: ");
+            nomes[i] = scanner.nextLine();
+
+            System.out.print("Digite o tempo de natação (em segundos) para " + nomes[i] + " que é o " + (i + 1) + "º nadador: ");
+            tempos[i] = scanner.nextDouble();
+            scanner.nextLine(); // Limpar o buffer após ler o número
+        }
+
+        int IndiceGeral = DadosGerais(tempos); // Declarando a variável para recebr o método DadosGerais
+        System.out.println("\nO nadador vencedor é: " + nomes[IndiceGeral] + " com tempo de " + tempos[IndiceGeral] + " segundos.");
+        }
+
+        public static int DadosGerais(double[] tempos) { // Criando o método DadosGerais 
+        double menorTempo = tempos[0];
+        int IndiceGeral = 0;
+
+        for (int i = 1; i < tempos.length; i++) {
+            if (tempos[i] < menorTempo) {
+                menorTempo = tempos[i];
+                IndiceGeral = i;
+            }
+        }
+
+        return IndiceGeral;
+        }
+
+        /* *** Exercício 20:
+        Thor está estudando os hábitos alimentares de um grupo de pessoas. Crie um programa que permita a Thor registrar a quantidade de calorias consumidas por cada pessoa durante uma semana (7 dias). Ao final, exiba a pessoa que consumiu a maior quantidade de calorias em um único dia. Dica: Use uma matriz para armazenar as calorias consumidas por cada pessoa em cada dia. Utilize loops "for" aninhados para solicitar os dados a Thor e encontrar a maior quantidade de calorias em um único dia. */
+
+        public static void Exercicio20 (Scanner scanner) {
+                
+            PrintStream out = System.out;
+                out.print("\033[h\033[2J");
+
+                out.println("\n* * * EXERCÍCIO 20 - HÁBITOS ALIMENTARES * * *\n");
+                out.println("> > > HÁBITOS ALIMENTARES < < <");
+
+                // ***********************
+                
+                String[] NomePessoa = new String[2];
+                int QtdPessoas = 2;         // Definimos QtdPessoas (QTD).
+                int QtdDias = 7;            // Definimos QtdPessoas (DIAS).
+                int[][] calorias = new int[QtdPessoas][QtdDias]; //  Cria uma matriz calorias para armazenar as calorias consumidas por cada pessoa em cada dia.
+        
+                out.println("Registro de Calorias Consumidas");
+
+                for (int pessoa = 0; pessoa < QtdPessoas; pessoa++) {
+                    out.print("Digite o nome da " + (pessoa + 1) + "ª pessoa: ");
+                    NomePessoa[pessoa] = scanner.next();
+                    out.println("\nQuais os dados da " + (pessoa + 1) + "ª pessoa de nome " + NomePessoa[pessoa]);
+   
+                    for (int dia = 0; dia < QtdDias; dia++) {
+                        out.print("Calorias consumidas no dia " + (dia + 1) + ": ");
+                        calorias[pessoa][dia] = scanner.nextInt();
+                    }
+
+                }
+
+                // Somente faz os cálculos das calorias
+
+                int pessoaMaxCalorias = 0;
+                int maxCalorias = somaCaloriasDia(calorias[0]); // Aqui chama o novo método
+        
+                for (int pessoa = 1; pessoa < QtdPessoas; pessoa++) {
+                    int caloriasPessoa = somaCaloriasDia(calorias[pessoa]);
+                    if (caloriasPessoa > maxCalorias) {
+                        maxCalorias = caloriasPessoa;
+                        pessoaMaxCalorias = pessoa;
+                    }
+                }
+        
+                out.println("\nPessoa que consumiu mais calorias em um único dia é a pessoa " + (pessoaMaxCalorias + 1));
+                out.println("Isso aconteceu no dia " + (encontrarDiaMaiorCalorias(calorias[pessoaMaxCalorias]) + 1));
+
+            }
+        
+            // Novo método  - Soma as calorias
+
+            public static int somaCaloriasDia(int[] calorias) {
+                int soma = 0;
+                for (int caloria : calorias) {
+                    soma += caloria;
+                }
+                return soma;
+            }
+
+            // Novo método  - Dia com maior consumo de calorias
+            
+            public static int encontrarDiaMaiorCalorias(int[] calorias) {
+                int maxCalorias = calorias[0];
+                int diaMaxCalorias = 0;
+        
+                for (int dia = 1; dia < calorias.length; dia++) {
+                    if (calorias[dia] > maxCalorias) {
+                        maxCalorias = calorias[dia];
+                        diaMaxCalorias = dia;
+                    }
+                }
+        
+                return diaMaxCalorias;
+            }
+
+            
+
+
+
+
 }
