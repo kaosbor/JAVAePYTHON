@@ -14,15 +14,15 @@ public class Exercicios11a20 {
         PrintStream out = System.out;
         out.print("\033[h\033[2J");
 
-        // Exercicios11a20.Exercicio11(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio12(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio13(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio14(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio16(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio17(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio18(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
-        // Exercicios11a20.Exercicio19(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio11(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio12(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio13(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio14(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio15(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio16(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio17(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio18(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
+        Exercicios11a20.Exercicio19(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
         Exercicios11a20.Exercicio20(scanner); /* Chama o método (função) ou seja classe.metodo(parametro); */
 
         scanner.close();
@@ -225,11 +225,7 @@ public class Exercicios11a20 {
     }
 
     /* *** Exercício 15:
-     * Sarah está organizando um sorteio de brindes para sua festa e precisa
-     * sortear aleatoriamente 3 números dentre os convidados. Crie um programa que
-     * permita à Sarah registrar os nomes dos convidados e, ao final, exiba os
-     * nomes dos 3 sorteados. Dica: Use um vetor para armazenar os nomes dos
-     * convidados e a classe `java.util.Random` para fazer o sorteio.
+     * Sarah está organizando um sorteio de brindes para sua festa e precisa sortear aleatoriamente 3 números dentre os convidados. Crie um programa que permita à Sarah registrar os nomes dos convidados e, ao final, exiba os nomes dos 3 sorteados. Dica: Use um vetor para armazenar os nomes dos convidados e a classe `java.util.Random` para fazer o sorteio.
      */
 
     public static void Exercicio15(Scanner scanner) {
@@ -471,10 +467,10 @@ public class Exercicios11a20 {
                 for (int pessoa = 0; pessoa < QtdPessoas; pessoa++) {
                     out.print("Digite o nome da " + (pessoa + 1) + "ª pessoa: ");
                     NomePessoa[pessoa] = scanner.next();
-                    out.println("\nQuais os dados da " + (pessoa + 1) + "ª pessoa de nome " + NomePessoa[pessoa]);
+                    out.println("\nDigite os gastos de calorias da " + (pessoa + 1) + "ª pessoa de nome " + NomePessoa[pessoa]);
    
                     for (int dia = 0; dia < QtdDias; dia++) {
-                        out.print("Calorias consumidas no dia " + (dia + 1) + ": ");
+                        out.print("Calorias consumidas no " + (dia + 1) + "º dia: ");
                         calorias[pessoa][dia] = scanner.nextInt();
                     }
 
