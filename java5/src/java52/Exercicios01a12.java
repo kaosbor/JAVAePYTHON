@@ -74,7 +74,7 @@ public class Exercicios01a12 {
             return palavras[indice];
             }
 
-            public static boolean palavraCompleta(char[]NovaLetra) {
+            public static boolean palavraCompleta(char[] NovaLetra) {
             /* para */ for (char letra : NovaLetra) {
                 /* se */ if (letra == '_') {
                     return false;
