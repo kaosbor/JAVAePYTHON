@@ -9,7 +9,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class trabalho1 {
+public class trabalho0 {
 
     private static final String[] PALAVRAS = {"JAVA", "PYTHON", "CPLUSPLUS", "PROGRAMACAO", "DESENVOLVIMENTO"};
     
@@ -62,33 +62,31 @@ public class trabalho1 {
         
         out.println("O Jogo começou, você terá direito a " + MAX_TENTATIVAS + " tentativas."); // Aqui demonstra de forma direta a quantidade de tentativas.
         
-        StringBuilder PalavraAdivinhar = new StringBuilder("_".repeat(palavra.length())); // Criada a variável "PalavraAdivinhar" usada para armazenar o objeto StringBuilder (classe que permite a criação e manipulação de strings mutáveis, maneira mais eficiente de construir strings modificáveis) criando uma string com apenas um caractere sublinhado, que será usada como ponto de partida para a construção da nova string. NO caos de repeat(palavra.length()): O método repeat é chamado na string _, sendo usado para criar uma nova string repetindo o conteúdo da string original x vezes. Nesse caso, a string _ será repetida até o tamanho da palavra.length() quantas vezes for necessária, ou seja, a linha de código cria uma nova string usando o caractere sublinhado _ repetido um número de vezes igual ao comprimento da string palavra. A nova string é então usada para inicializar um objeto StringBuilder chamado PalavraAdivinhar, que pode ser posteriormente manipulado para construir a representação desejada da palavra com sublinhados. Pode ser usado o FOR no lugar de REPEAT.
+        StringBuilder PalavraAdivinhar = new StringBuilder("-".repeat(palavra.length())); // A variável "PalavraAdivinhar" armazena um objeto StringBuilder inicializado com sublinhados usando o método repeat(palavra.length()). Isso cria uma base de sublinhados do mesmo tamanho da palavra. O StringBuilder pode ser modificado para formar a representação da palavra com sublinhados. Um loop FOR também poderia ser utilizado em vez do método REPEAT.
         
-        // Resumo: o loop continuará a ser executado enquanto houver vidas disponíveis e enquanto ainda houver letras não adivinhadas na palavra. A cada iteração do loop, a representação da palavra, o número de vidas restantes e a solicitação para digitar uma letra serão exibidos, e o programa aguardará a entrada do usuário para adivinhar a próxima letra.
-        while (vidas > 0 && PalavraAdivinhar.toString().contains("_")) { // While (enquanto) que continuará executando o bloco de código dentro das chaves enquanto duas condições  forem verdadeiras: variável vidas > 0 (ou seja, o jogador ainda tem vidas restantes) e a string resultante da chamada PalavraAdivinhar.toString() contém pelo menos um caractere de sublinhado "_" (pois haverá letras desconhecidas na palavra que o jogador precisa adivinhar).O método toString() é chamado para obter uma representação de string dessa palavra atual, e o método contains("_") verifica se a palavra contém pelo menos um caractere "_", indicando que há espaços vazios ou letras a serem adivinhadas na palavra, e enquanto houver letras não adivinhadas (indicadas pelo caractere "_"), o loop continuará a ser executado.
+        // Resumo: o loop continua enquanto houver vidas e letras não adivinhadas, e a cada iteração (quando um loop é executado, isso é chamado de iteração, quando um ciclo completo é executado dentro de um loop), mostra a palavra, vidas e pede uma letra. O programa espera a entrada do usuário para adivinhar.
+        while (vidas > 0 && PalavraAdivinhar.toString().contains("-")) { // O loop "while" continua a execução do código entre as chaves enquanto as duas condições são verdadeiras: "vidas" > 0 (jogador tem vidas restantes) e a representação em string da "PalavraAdivinhar" contém pelo menos um sublinhado "_". Método toString() obtém a string atual da palavra, e o método contains("_") verifica se há sublinhados na palavra (letras não adivinhadas). O loop continua enquanto houver letras não adivinhadas na palavra.
         out.println("Palavra: " + PalavraAdivinhar); // Imprime a representação atual da palavra, com letras adivinhadas corretamente e espaços vazios para letras não adivinhadas.
         out.println("Vidas restantes: " + vidas); // Imprime o número de vidas restantes.
-        out.print("Digite uma letra: "); // Exibe uma mensagem para o usuário, para que o usuário digite uma letra. 
-        char letra = scanner.next().toUpperCase().charAt(0); // Entrada do usuário usando um objeto Scanner (provavelmente já declarado em algum lugar do código) e converte a primeira letra inserida em maiúscula. Essa letra é armazenada na variável letra.
+        out.print("Digite uma letra: "); // Imprime mensagem para o usuário, para que digite uma letra. 
+        char letra = scanner.next().toUpperCase().charAt(0); // A entrada do usuário é obtida através de um objeto Scanner e a primeira letra é convertida para maiúscula, sendo armazenada na variável "letra".
         
-        // Resumo: esse trecho de código verifica se a entrada do usuário (a variável letra) não é uma letra do alfabeto e se não for, uma mensagem de erro é exibida, sendo a iteração atual do loop interrompida, dando ao usuário uma nova oportunidade de inserir uma entrada válida.
-        
-            if (!Character.isLetter(letra)) { // No Java, Character.isLetter() é um método estático da classe Character que verifica se um caractere dado é uma letra do alfabeto. O método retorna true se o caractere for uma letra e false caso contrário. O operador ! (negação) é usado para inverter o resultado do método, ou seja, se o método retornar true, a negação torna-se false, e vice-versa. A classe Character faz parte da biblioteca padrão do Java (java.lang.Character), que é automaticamente importada em todos os programas Java. Portanto, você não precisa fazer um import explícito para usar métodos estáticos dessa classe.
+        // Resumo: esse trecho de código verifica se a entrada do usuário (a variável letra) não é uma letra do alfabeto e se não for, uma mensagem de erro é exibida, sendo a iteração atual do loop interrompida, dando ao usuário uma nova oportunidade de inserir uma entrada válida.        
+            if (!Character.isLetter(letra)) { // O método estático Character.isLetter() verifica se um caractere é uma letra do alfabeto, se for uma letra (true) e caso contrário (false). O operador ! (negação) inverte o resultado do método. A classe Character faz parte da biblioteca padrão do Java (java.lang.Character), sendo automática, sem a necessidade de import.
 
                 out.println("Entrada inválida. Digite apenas letras."); // Se o caractere não for uma letra, imprime uma mensagem de erro (entrada é inválida).
-                continue; // Palavra-chave continue usada para interromper a iteração atual do loop e passar para a próxima iteração, no contexto do código, se a entrada do usuário não for uma letra do alfabeto, a mensagem de erro será exibida, e o loop avançará para a próxima iteração, evitando que o restante do código dentro do loop seja executado. Isso dá ao usuário uma nova chance de fornecer uma entrada válida.
+                continue; // O uso de "continue" (palavra-chave) interrompe a iteração atual do loop e passa para a próxima. No contexto, se a entrada do usuário não for uma letra, a mensagem de erro é exibida, e o loop segue para a próxima iteração. Isso permite que o usuário insira uma entrada válida novamente.
             }
             
-                // Resumindo: o trecho verifica se a letra fornecida pelo usuário não está presente na palavra que está sendo adivinhada. Se a letra não estiver na palavra, o número de vidas é reduzido, indicando que o jogador errou a tentativa de adivinhar a letra.
-                if (palavra.indexOf(letra) == -1) { //  O código verifica se o resultado de palavra.indexOf(letra) é igual a -1. Isso significa que o caractere letra não foi encontrado na string palavra.
-                vidas--; // Se o caractere letra não estiver na palavra (ou seja, palavra.indexOf(letra) retornou -1), isso indica que a tentativa do usuário foi incorreta. Nesse caso, o número de vidas é decrementado.
-
+                // Resumo: verifica se a letra do usuário não está na palavra. Se não estiver, diminui as vidas.
+                if (palavra.indexOf(letra) == -1) { // Verifica se letra não está em palavra (palavra.indexOf(letra) == -1).
+                vidas--; // Se letra não estiver na palavra (palavra.indexOf(letra) retornou -1), decrementa vidas.
                 } 
-                // Resumo: o bloco else (outro) é executado quando a letra fornecida pelo usuário está na palavra. Ele percorre cada posição na palavra e, se encontrar a letra correta, atualiza a representação da palavra adivinhada PalavraAdivinhar para mostrar a letra nas posições corretas. Parte de um processo de "feedback" ao jogador, informando que a adivinhação foi correta e mostrando a letra nos locais corretos na palavra.
-                else { // Indica que se o caractere letra estiver presente na palavra, ou seja, a tentativa foi correta, o código nesse bloco será executado.
-                    for (int i = 0; i < palavra.length(); i++) { // Loop for que percorre cada posição na string palavra para verificar se a letra está presente.
-                    if (palavra.charAt(i) == letra) { // O código verifica se o caractere na posição i da string palavra é igual à letra fornecida pelo usuário.
-                        PalavraAdivinhar.setCharAt(i, letra); // Se a letra estiver presente na posição i da palavra, o código atualiza a string PalavraAdivinhar (que é uma representação da palavra sendo adivinhada) substituindo o caractere vazio ou sublinhado (que indica uma letra não adivinhada) pelo caractere letra. Isso ajuda a mostrar as letras corretas adivinhadas pelo jogador.
+                // Resumo: o bloco else (outro) ocorre quando a letra do usuário está na palavra. Ele percorre as posições, atualiza PalavraAdivinhar para exibir a letra nas posições certas, fornecendo feedback da adivinhação correta.
+                else { // Quando a letra está na palavra (tentativa correta), este bloco de código é executado.
+                    for (int i = 0; i < palavra.length(); i++) { // Loop do LAÇO "for" verifica a presença da letra em cada posição da string "palavra".
+                    if (palavra.charAt(i) == letra) { // O código verifica se o caractere na posição "i" da string "palavra" é == à letra do usuário.
+                        PalavraAdivinhar.setCharAt(i, letra); // Se a letra estiver na posição "i" da palavra, o código atualiza a string "PalavraAdivinhar" (== a palavra a ser adivinhada), substituindo o espaço vazio/sublinhado (indicando uma letra não adivinhada) pela letra, e revela as letras corretamente adivinhadas.
                     }
                  }
             }
@@ -122,10 +120,11 @@ public class trabalho1 {
    private static void exibirPontuacoes() {// Função para exibir as pontuações dos jogadores.
     PrintStream out = System.out; // Criação de um objeto PrintStream para a saída padrão.
     out.println("PONTUAÇÕES:"); // Exibe o cabeçalho indicando que as pontuações serão mostradas.
-
     
     for (int i = 0; i < jogadores.size(); i++) { // Loop que percorre as listas de jogadores e pontuações.
-        out.println(jogadores.get(i) + ": " + pontuacoes.get(i) + " vidas restantes"); // Exibe o nome do jogador e sua pontuação correspondente e Utiliza os índices "i" para acessar as posições nas listas.
+        out.println("O jogador de nome " + jogadores.get(i) + " possui " + pontuacoes.get(i) + " vidas restantes"); // Exibe o nome do jogador e sua pontuação correspondente e Utiliza os índices "i" para acessar as posições nas listas.
         }
     }
 }
+
+// "JAVA", "PYTHON", "CPLUSPLUS", "PROGRAMACAO", "DESENVOLVIMENTO"};
