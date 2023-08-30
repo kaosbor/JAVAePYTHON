@@ -15,7 +15,7 @@ public class ContagemPalavras {
         String frase = scanner.nextLine();
         String[] palavras = frase.split(" ");
 
-        HashMap<String, Integer> contagem = new HashMap<>();
+        HashMap<String, Integer> contagem = new HashMap<>(0, 0);
         for (String palavra : palavras) {
             contagem.put(palavra, contagem.getOrDefault(palavra, 0) + 1);
         }
@@ -32,5 +32,4 @@ public class ContagemPalavras {
             out.println("Hello, World!");
         }
     }
-
 }

@@ -15,7 +15,7 @@ public class Person {
     // Método
     public void introduce(){
         System.out.println("Hello, my name is " + name + " and I am " + age + " years old");
-        System.out.println("Olá, meu nome é " + name + " e tenho " + age + " anos de idade");
+        // System.out.println("Olá, meu nome é " + name + " e tenho " + age + " anos de idade");
     }
 }
 

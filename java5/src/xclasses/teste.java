@@ -12,7 +12,7 @@ public class teste {
     scores.put("Leandro", 100);
     scores.put("Brenda", 95);
 
-    System.out.println("Pontuação de Brenda: " + scores.get("Alice"));
+    System.out.println("Pontuação de Brenda: " + scores.get(""));
     System.out.println("Tamanho do HashMap: " + scores.size());
     
     for (Map.Entry<String, Integer> entry: scores.entrySet()) {

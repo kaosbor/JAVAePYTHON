@@ -13,7 +13,7 @@ public class Contador {
         String frase = scanner.nextLine();
         String[] palavras = frase.split("");
 
-        HashMap<String, Integer> contagem = new HashMap<>(0, 0);
+        HashMap<String, Integer> contagem = new HashMap<>();
         for (String palavra : palavras) {
             contagem.put(palavra, contagem.getOrDefault(palavra,0) + 1);
         }
