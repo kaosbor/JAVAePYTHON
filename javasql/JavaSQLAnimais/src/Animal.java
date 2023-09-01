@@ -1,4 +1,4 @@
-class Animal {
+public class Animal {
     String nome;
     int idade;
     String raca;
@@ -8,12 +8,11 @@ class Animal {
         this.idade = idade;
         this.raca = raca;
     }
-        
+
     public void exibirInfo() {
-        System.out.println("-----------------------------");
-        System.out.println(" O nome digitado foi: " + nome);
-        System.out.println("A idade digitada foi: " + idade);
-        System.out.println(" A raça digitada foi: " + raca);
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Raça: " + raca);
     }
 
     public String getTipoAnimal() {
