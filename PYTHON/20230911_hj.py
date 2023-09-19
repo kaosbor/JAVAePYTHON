@@ -160,6 +160,12 @@ class Cachorro: # Classe cachorro
             self.nome = nome # Parecido com o this 
             self.idade = idade # Parecido com o this
         
+'''
+__init__ é o nome do método de inicialização.
+self é uma referência ao próprio objeto que está sendo criado. É uma convenção em Python usar self como o primeiro parâmetro de todos os métodos de instância de uma classe.
+nome e idade são parâmetros que você pode passar ao criar um objeto da classe.
+Quando você cria um objeto da classe que possui esse método __init__, você fornece valores para nome e idade, e esses valores são usados para inicializar os atributos do objeto. Por exemplo:
+'''     
         def latir(self):
             print(self.nome, "faz au au au au e possui",  self.idade, "anos de idade.")
             
