@@ -74,6 +74,7 @@ print("Minha altura é: ", altura)
     print(f"Nome: {nome}, Idade: {idade}") # Usando f-string (Python 3.6+)
 '''
 
+'''
 print("\n>>> Exemplo 11: Funções <<<")
     # def é uma palavra-chave reservada para função
     # Cria a função abaixo, mas ela ainda não foi chamada
@@ -84,6 +85,7 @@ def saudacao(nome): # recebe argumento nome e concatena com ver slide
 nome_usuario = input("Digite seu nome: ")
 resultado = saudacao(nome_usuario)
 print(resultado)
+'''
 
 '''
     print("\n>>> Exemplo 12: Métodos <<<")
@@ -151,6 +153,8 @@ print(resultado)
     altura_pessoa = pessoa["altura"] 
     print (altura_pessoa) # A chave "altura" foi removida, então tentar acessá-la causará um erro
 '''
+
+'''
 print("\n>>> PROGRAMAÇÃO ORIENTADA A OBJETOS <<<")
     
 print("\n>>> POLIMORFISMO <<<")
@@ -159,13 +163,15 @@ class Cachorro: # Classe cachorro
         def __init__(self, nome, idade): # Define os métodos de nome INIT
             self.nome = nome # Parecido com o this 
             self.idade = idade # Parecido com o this
-        
 '''
-__init__ é o nome do método de inicialização.
-self é uma referência ao próprio objeto que está sendo criado. É uma convenção em Python usar self como o primeiro parâmetro de todos os métodos de instância de uma classe.
+ 
+'''
+__init__ é o nome do método de inicialização. self é uma referência ao próprio objeto que está sendo criado. É uma convenção em Python usar self como o primeiro parâmetro de todos os métodos de instância de uma classe.
 nome e idade são parâmetros que você pode passar ao criar um objeto da classe.
 Quando você cria um objeto da classe que possui esse método __init__, você fornece valores para nome e idade, e esses valores são usados para inicializar os atributos do objeto. Por exemplo:
-'''     
+'''  
+
+'''   
         def latir(self):
             print(self.nome, "faz au au au au e possui",  self.idade, "anos de idade.")
             
@@ -180,3 +186,60 @@ cachorro2 = Cachorro("Bella", 5)
  # Chamando o MÉTODOS dos OBJETOS
 cachorro1.latir()
 cachorro2.andar()
+
+'''
+
+
+# Início
+'''
+try:
+    numero = int(input("Digite um número: "))
+    resultado = 10 / numero
+
+except ZeroDivisionError:
+    print("Erro: Divisão por zero!")
+
+else:
+    print("O resultado é: ", resultado)
+''' # Fim do códgio
+
+# Início
+'''
+try:
+    arquivo = open ("arquivo.txt", "r")
+    
+except FileNotFoundError:
+    print("Erro: Arquivo não encontrado!")
+
+finally:
+    arquivo.closed()
+''' # Fim do códgio
+
+# Início
+'''
+class MeuErro(Exception):
+    pass
+
+try:
+    raise MeuErro("Isso é um erro personalizado.")
+    
+except MeuErro as erro:
+    print("Erro:", str(erro))  
+''' # Fim do códgio
+
+# Introdução à BIBLIOTECA
+'''
+1. NumPy (Numerical Python)
+    * Arrays NumPy;
+    * Operações matemáticas;
+    * Álgebra Linear.
+2. Pandas
+    * DataFrame;
+    * Leitura e Escrita de Dados;
+    * Manipulação e limpeza de dados.
+3. Matplotlib
+    * Gráficos em 2D e 3D;
+    * Plotagem de gráficos;
+    * Subplots;
+    * Interação e personalização.
+'''  
