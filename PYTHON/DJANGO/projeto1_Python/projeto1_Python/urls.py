@@ -15,24 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.contrib import admin
-from django.urls import path
-from aplicativoPy import views
+
+from django.urls import path        # Arq. 02, pág. 22 
+from aplicativoPy import views      # Arq. 02, pág. 22 (relaciona abaixo) 
+from . import views                 # Arq. 02, pág. 22
+from django.contrib import admin    # Arq. 02, pág. 23
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('produtos/', views.lista_produtos, name='lista_produtos'),
+    path('produtos/', views.lista_produtos, name='lista_produtos'), 
+    path('criar_pedido/', views.criar_pedido, name='criar_pedidos'),
+    
+    # Adicionando a rota para a raiz
     path('', views.lista_produtos, name='lista_produtos'),
-
+    path('inserir_produto/', views.criar_produto, name='inserir_produto'),
+    path('inserir_categoria/', views.inserir_categoria, name='inserir_categoria'),
 ]
-
-'''
-Estava no DJANGO ANTIGO, ver pedido de alteração na página 22/30 da apresentçãoa 02.
-
-from django.contrib import admin
-from django.urls import path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
-'''
