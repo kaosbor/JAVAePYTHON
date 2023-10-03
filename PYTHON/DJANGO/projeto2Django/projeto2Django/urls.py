@@ -1,5 +1,5 @@
 """
-URL configuration for projetocodecolinas project.
+URL configuration for projeto2Django project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,22 +15,35 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+# código urls.py anterior do projeto1Dango
+
+'''
 from django.contrib import admin
 from django.urls import path
-from aplicativoPy import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+]
+'''
+
+# urls.py
+# Adicione outras URLs conforme necessário para outras funcionalidades
+
+from django.urls import path
+from estoque_app import views 
+
+urlpatterns = [
     
-    path('produtos/', views.lista_produtos, name='lista_produtos'),
+    path('', views.index, name = 'index'),
     
-    path('criar_pedido/', views.criar_pedido, name='criar_pedido'),
+    path('estoque/', views.lista_estoque, name='lista_estoque'),
     
-    # Adicionando a rota para a raiz
+    path('estoque/adicionar/', views.adicionar_item, name='adicionar_item'),
     
-    path('', views.lista_produtos, name='lista_produtos'),
+    path('estoque/<int:id>/detalhes/', views.detalhes_item, name='detalhes_item'),
     
-    path('inserir_produto/', views.criar_produto, name='inserir_produto'),
+    path('estoque/<int:id>/editar/', views.editar_item, name='editar_item'),
     
-    path('inserir_categoria/', views.inserir_categoria, name='inserir_categoria'),
+    path('estoque/<int:id>/excluir/', views.confirmar_exclusao_item, name='confirmar_exclusao_item'),
+
 ]

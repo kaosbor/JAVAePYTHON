@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Itens em Estoque</title>
+    <link rel="stylesheet" type="text/css" href="/static/estoque_app/css/estilos.css"/>
+</head>
+<body>
+    <header>
+        <h1>Lista de Itens em Estoque</h1>
+    </header>
+    
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Quantidade Disponível</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in estoque %}
+                    <tr>
+                        <td>{{ item.nome }}</td>
+                        <td>{{ item.descricao }}</td>
+                        <td>{{ item.quantidade_disponivel }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3">Não há itens em estoque.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{% url 'adicionar_item' %}" class="btn btn-primary">Adicionar Novo Item</a>
+    </main>
+
+    <!-- Inclua seus scripts JavaScript aqui, se necessário -->
+</body>
+</html>

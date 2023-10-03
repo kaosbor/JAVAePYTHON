@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Item ao Estoque</title>
+    <link rel="stylesheet" type="text/css" href="/static/estoque_app/css/estilos.css"/>
+</head>
+
+<body>
+    <header>
+        <h1>Adicionar Item ao Estoque</h1>
+    </header>
+    
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Adicionar Item</button>
+        </form>
+        
+        <a href="{% url 'lista_estoque' %}" class="btn btn-secondary">Voltar para a Lista de Estoque</a>
+    </main>
+
+    <!-- Inclua seus scripts JavaScript aqui, se necessário -->
+</body>
+</html>

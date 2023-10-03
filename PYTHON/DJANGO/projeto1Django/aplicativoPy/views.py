@@ -16,7 +16,6 @@ def lista_produtos(request):
 
 def criar_pedido(request):
     form = PedidoForm(request.POST or None)
-
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -31,7 +30,6 @@ def criar_produto(request):
             form.save()
             return redirect('lista_produtos')
     return redirect('lista_produtos')
-
 
 def inserir_categoria(request):
     form = CategoriaForm(request.POST or None)

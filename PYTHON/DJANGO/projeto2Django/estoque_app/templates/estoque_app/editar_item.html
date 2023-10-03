@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Item do Estoque</title>
+    <link rel="stylesheet" type="text/css" href="/static/estoque_app/css/estilos.css"/>
+</head>
+<body>
+    <header>
+        <h1>Editar Item do Estoque</h1>
+    </header>
+    
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        </form>
+        
+        <a href="{% url 'detalhes_item' item.id %}" class="btn btn-secondary">Cancelar</a>
+    </main>
+
+    <!-- Inclua seus scripts JavaScript aqui, se necessário -->
+</body>
+</html>
