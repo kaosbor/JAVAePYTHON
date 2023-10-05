@@ -5,17 +5,35 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import ItemEstoque
 from .forms import ItemEstoqueForm
-from django.http import HttpResponse
-
 
 def index(request):
-    return HttpResponse("Abri a página! - TESTE")
+    return render(request, 'estoque_app/index.html')
 
+def detalhes_item(request, id):
+    item = get_object_or_404(ItemEstoque, id=id)
+    return render(request, 'estoque_app/detalhes_item.html', {'item': item})
+
+def editar_item(request, id):
+    item = get_object_or_404(ItemEstoque, id=id)
+    if request.method == 'POST':
+        form = ItemEstoqueForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_estoque')
+    else:
+        form = ItemEstoqueForm(instance=item)
+    return render(request, 'estoque_app/editar_item.html', {'form': form})
+
+def excluir_item(request, id):
+    item = get_object_or_404(ItemEstoque, id=id)
+    if request.method == 'POST':
+        item.delete()
+        return redirect('lista_estoque')
+    return render(request, 'estoque_app/confirmar_exclusao_item.html', {'item': item})
 
 def lista_estoque(request):
     estoque = ItemEstoque.objects.all()
     return render(request, 'estoque_app/lista_estoque.html', {'estoque': estoque})
-
 
 def adicionar_item(request):
     if request.method == 'POST':
@@ -27,34 +45,6 @@ def adicionar_item(request):
         form = ItemEstoqueForm()
     return render(request, 'estoque_app/adicionar_item.html', {'form': form})
 
-# erro
-
-
-def detalhes_item(request, id):
-    itemd = get_object_or_404(ItemEstoque, pk=id)
-    return render(request, 'estoque_app/detalhes_item.html', {'item': itemd})
-
-
-def editar_item(request, id):
-    item = get_object_or_404(ItemEstoque, pk=id)
-
-    if request.method == 'POST':
-        form = ItemEstoqueForm(request.POST, instance=item)
-        if form.is_valid():
-            form.save()
-            return redirect('detalhes_item', id=id)
-    else:
-        form = ItemEstoqueForm(instance=item)
-
-    return render(request, 'estoque_app/editar_item.html', {'form': form, 'item': item})
-
-
-def confirmar_exclusao_item(request, id):
-    item = get_object_or_404(ItemEstoque, pk=id)
-    if request.method == 'POST':
-        item.delete()
-        return redirect('lista_estoque')
-    return render(request, 'estoque_app/confirmar_exclusao_item.html', {'item': item})
 
 
 # código view.py anterior do aplicativoPy

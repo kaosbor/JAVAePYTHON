@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes do Item</title>
-    <link rel="stylesheet" type="text/css" href="/static/estoque_app/css/estilos.css"/>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/static/estoque_app/css/style.css"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Detalhes do Item</h1>
+      <h1>Detalhes do Item</h1>
     </header>
-    
+
     <main>
-        <h2>Nome: {{ item.nome }}</h2>
-        <p>Descrição: {{ item.descricao }}</p>
-        <p>Quantidade Disponível: {{ item.quantidade_disponivel }}</p>
-        
-        <a href="{% url 'editar_item' item.id %}" class="btn btn-primary">Editar</a>
-        <a href="{% url 'confirmar_exclusao_item' item.id %}" class="btn btn-danger">Excluir</a>
-        <a href="{% url 'lista_estoque' %}" class="btn btn-secondary">Voltar para a Lista de Estoque</a>
+      <h2>Nome: {{ item.nome }}</h2>
+      <p>Descrição: {{ item.descricao }}</p>
+      <p>Quantidade Disponível: {{ item.quantidade_disponivel }}</p>
+
+      <a href="{% url 'editar_item' id=item.id %}" class="btn btn-primary"
+        >Editar</a
+      >
+      <a href="{% url 'excluir_item' id=item.id %}" class="btn btn-danger"
+        >Excluir</a
+      >
+      <a href="{% url 'lista_estoque' %}" class="btn btn-secondary"
+        >Voltar para a Lista de Estoque</a
+      >
     </main>
 
     <!-- Inclua seus scripts JavaScript aqui, se necessário -->
-</body>
+  </body>
 </html>
