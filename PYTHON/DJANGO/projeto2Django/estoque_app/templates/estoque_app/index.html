@@ -11,24 +11,26 @@
         <h1>PÁGINAS</h1>
     </header>
 
-    <a href="{% url 'adicionar_item' %}" class="btn btn-primary">ADICIONAR ITEM</a>
+    <a href="adicionar_item.html" class="btn btn-primary">ADICIONAR ITEM</a> 
 
-    <!-- Iterate through the items in your inventory -->
-    {% for item in estoque %}
-        <div>
-            <!-- Link to Excluir (Delete) the item -->
-            <a href="{% url 'excluir_item' id=item.id %}" class="btn btn-danger">Excluir</a>
+    <a href="{% url 'lista_estoque' %}" class="btn btn-primary">LISTAR ESTOQUE</a>
 
-            <!-- Link to Detalhar (Detail) the item -->
-            <a href="{% url 'detalhes_item' item.id %}" class="btn btn-primary">DETALHAR ITENS</a>
-
-            <!-- Link to Editar (Edit) the item -->
-            <a href="{% url 'editar_item' item.id %}" class="btn btn-primary">Editar</a>
-        </div>
-    {% endfor %}
-
-    <a href="{% url 'lista_estoque' %}" class="btn btn-primary">LISTA DE ESTOQUE</a>
+    <a href="editar_item.html" class="btn btn-primary">EDITAR ESTOQUE</a>
 
     <!-- Inclua seus scripts JavaScript aqui, se necessário -->
 </body>
 </html>
+
+   <!-- Iterate through the items in your inventory -->
+    <!-- # {% for item in estoque %} # -->
+        <!-- # <div> # -->
+            <!-- Link to Excluir (Delete) the item -->
+            <!-- # <a href="{% url 'excluir_item' id=item.id %}" class="btn btn-danger">Excluir</a> # -->
+
+            <!-- Link to Detalhar (Detail) the item -->
+            <!-- # <a href="{% url 'detalhes_item' item.id %}" class="btn btn-primary">DETALHAR ITENS</a> # -->
+
+            <!-- Link to Editar (Edit) the item -->
+            <!-- # <a href="{% url 'editar_item' item.id %}" class="btn btn-primary">Editar</a> # -->
+        <!-- # </div> # -->
+    <!-- # {% endfor %} # -->

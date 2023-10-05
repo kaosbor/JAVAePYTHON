@@ -64,15 +64,15 @@ form select {
 /* Botões na cor roxa #614caf */
 form button[type="submit"],
 a.btn {
-    background-color: #958bb8;
+    background-color: #504e4e;
     color: #fff;
     border: none;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
     padding: 10px 20px;
     font-size: 32px;
-    width: calc(100% - 16px);
+    width: calc(100% - 20px);
     text-decoration: none; /* Remove sublinhado dos links */
     margin: 10px; /* Espaçamento entre os botões */
     text-align: center; /* Alinhar o texto no centro */

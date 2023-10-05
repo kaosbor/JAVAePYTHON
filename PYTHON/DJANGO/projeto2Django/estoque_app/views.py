@@ -6,6 +6,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import ItemEstoque
 from .forms import ItemEstoqueForm
 
+def editar_item(request):
+    id = request.GET.get('id')
+    return render(request, 'sua_template_de_edicao.html', {'id': id})
+
 def index(request):
     return render(request, 'estoque_app/index.html')
 
@@ -44,8 +48,6 @@ def adicionar_item(request):
     else:
         form = ItemEstoqueForm()
     return render(request, 'estoque_app/adicionar_item.html', {'form': form})
-
-
 
 # código view.py anterior do aplicativoPy
 '''

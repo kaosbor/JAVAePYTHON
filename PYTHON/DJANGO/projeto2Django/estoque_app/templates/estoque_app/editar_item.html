@@ -6,10 +6,10 @@
     <title>Editar Item</title>
     <link rel="stylesheet" type="text/css" href="/static/estoque_app/css/style.css"/>
 </head>
+
 <body>
-    <header>
-        <h1>EDITAR ITEM</h1>
-    </header>
+
+    <header><h1>EDITAR ITEM</h1></header>
 
     <form method="post">
         {% csrf_token %}
@@ -19,7 +19,8 @@
 
     <a href="{% url 'lista_estoque' %}" class="btn btn-primary">Voltar para a Lista de Estoque</a>
 
-    <!-- Inclua seus scripts JavaScript aqui, se necessário -->
+    <a href="/" class="btn btn-primary">PÁGINA INICIAL</a>
+
 </body>
+
 </html>
- 

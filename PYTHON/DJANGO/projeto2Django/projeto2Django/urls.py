@@ -29,16 +29,25 @@ urlpatterns = [
 # urls.py
 # Adicione outras URLs conforme necessário para outras funcionalidades
 
-
 from django.urls import path
 from estoque_app import views
 
 urlpatterns = [
     path('estoque/index/', views.index, name='index'),
+    
     path('estoque/', views.lista_estoque, name='lista_estoque'),
-    path('estoque/adicionar/', views.adicionar_item, name='adicionar_item'),
-    path('estoque/<int:id>/detalhes/', views.detalhes_item, name='detalhes_item'),
-    path('estoque/<int:id>/editar/', views.editar_item, name='editar_item'),
-    path('estoque/<int:id>/excluir/', views.excluir_item, name='confirmar_exclusao_item'),  # Rota para exclusão
+    
+    # path('estoque/adicionar/', views.adicionar_item, name='adicionar_item'),
+    
+    path('adicionar_item.html', views.adicionar_item, name='adicionar_item'),
+    
+    path('estoque/detalhes/<int:id>/', views.detalhes_item, name='detalhes_item'),
+    
+    path('estoque/editar/<int:id>/', views.editar_item, name='editar_item'),
+   
+    path('estoque/excluir/<int:id>/', views.excluir_item, name='confirmar_exclusao_item'),  # Rota para exclusão
+    
     path('', views.index, name='index'),
+    
 ]
+
