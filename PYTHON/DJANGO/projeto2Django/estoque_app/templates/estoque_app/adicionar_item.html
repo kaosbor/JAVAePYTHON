@@ -1,29 +1,27 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Item ao Estoque</title>
-    <link rel="stylesheet" type="text/css" href="/static/estoque_app/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/estoque_app/css/styles.css"/>
 </head>
 
 <body>
     <header>
         <h1>Adicionar Item ao Estoque</h1>
-    </header>
-    
-    <main>
+    </header>    
+
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">ADICIONAR A LISTA</button>
         </form>
         
-        <a href="{% url 'lista_estoque' %}" class="btn btn-secondary">Voltar para a Lista de Estoque</a>
-    </main>
+        <a href="{% url 'lista_estoque' %}" class="btn btn-secondary">VOLTAR - LISTA ESTOQUE</a>
 
 
+    <a href="/" class="btn btn-primary">PÁGINA INICIAL</a>
     
     <!-- Inclua seus scripts JavaScript aqui, se necessário -->
 </body>

@@ -64,7 +64,7 @@ form select {
 /* Botões na cor roxa #614caf */
 form button[type="submit"],
 a.btn {
-    background-color: #504e4e;
+    background-color: #3c33eb;
     color: #fff;
     border: none;
     font-weight: bold;
